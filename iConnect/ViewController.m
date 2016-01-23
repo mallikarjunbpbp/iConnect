@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
-
+#import "JobSeekerHomeViewController.h"
+#import "RecruiterHomeViewController.h"
+#import <Parse/Parse.h>
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -16,23 +19,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-   
-    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.alertBody = @"Your alert message";
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    // Request to reload table view data
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
-    
+       
+//    // Request to reload table view data
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
+//    
     
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)loginBtnPressed:(id)sender {
+    
+    //    NSString *randomNumber = [NSString stringWithFormat:@"%d",arc4random()%2];
+    //
+    //    if ([randomNumber isEqualToString:@"0"])
+    //    {
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    JobSeekerHomeViewController *jobSeekerHomeViewController = (JobSeekerHomeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"JobSeekerHome"];
+    [self.navigationController pushViewController:jobSeekerHomeViewController animated:NO];
+    
+    //    }
+    //    else
+    //    {
+    //
+    //        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    //
+    //        RecruiterHomeViewController *recruiterHomeViewController = (RecruiterHomeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RecruiterHome"];
+    //
+    //        [self.navigationController pushViewController:recruiterHomeViewController animated:NO];
+    //        
+    //    }
 }
 
 @end

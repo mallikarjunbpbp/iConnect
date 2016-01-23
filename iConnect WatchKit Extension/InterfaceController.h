@@ -11,4 +11,8 @@
 
 @interface InterfaceController : WKInterfaceController
 
+@property(nonatomic) NSMutableArray *jobsArray;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *jobsTableView;
+
+
 @end

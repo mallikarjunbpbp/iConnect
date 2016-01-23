@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <Parse/Parse.h>
 @interface AppDelegate ()
 
 @end
@@ -16,9 +16,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [Parse setApplicationId:@"8iZ4ywjvDt6XWhVO9O2gsg3mGbjhhJ4gP0Ki45Sk"
+                  clientKey:@"PX8Clf1njJsD5AHMv1FrgRYeYNBMhxrKJZDJVsho"];
+    
     // Override point for customization after application launch.
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:5];
+    localNotification.repeatInterval=kCFCalendarUnitSecond;
+    localNotification.timeZone=[NSTimeZone defaultTimeZone];
+    localNotification.alertBody = @"Your alert message";
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -26,6 +42,9 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+    
+    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
