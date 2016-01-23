@@ -23,6 +23,13 @@
 		06061F6E1C536D990013A322 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06061F6D1C536D990013A322 /* ExtensionDelegate.m */; };
 		06061F711C536D990013A322 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06061F701C536D990013A322 /* NotificationController.m */; };
 		06061F731C536D990013A322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06061F721C536D990013A322 /* Assets.xcassets */; };
+		3FF17C841C5378BD0072A3C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06061F321C536D980013A322 /* Main.storyboard */; };
+		3FF17C881C537D840072A3C5 /* JobSeekerHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF17C871C537D840072A3C5 /* JobSeekerHomeViewController.m */; };
+		3FF17C8B1C537D970072A3C5 /* RecruiterHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF17C8A1C537D970072A3C5 /* RecruiterHomeViewController.m */; };
+		3FF17C8E1C537F1D0072A3C5 /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF17C8D1C537F1D0072A3C5 /* JobsViewController.m */; };
+		3FF17C911C537F360072A3C5 /* AppliedJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF17C901C537F360072A3C5 /* AppliedJobsViewController.m */; };
+		3FF17C941C537F510072A3C5 /* SavedJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF17C931C537F510072A3C5 /* SavedJobsViewController.m */; };
+		3FF17C971C537F650072A3C5 /* SuggestedJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF17C961C537F650072A3C5 /* SuggestedJobsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +119,18 @@
 		06061F701C536D990013A322 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		06061F721C536D990013A322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06061F741C536D990013A322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF17C861C537D840072A3C5 /* JobSeekerHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobSeekerHomeViewController.h; path = ViewController/JobSeekerHomeViewController.h; sourceTree = "<group>"; };
+		3FF17C871C537D840072A3C5 /* JobSeekerHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobSeekerHomeViewController.m; path = ViewController/JobSeekerHomeViewController.m; sourceTree = "<group>"; };
+		3FF17C891C537D970072A3C5 /* RecruiterHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecruiterHomeViewController.h; path = ViewController/RecruiterHomeViewController.h; sourceTree = "<group>"; };
+		3FF17C8A1C537D970072A3C5 /* RecruiterHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecruiterHomeViewController.m; path = ViewController/RecruiterHomeViewController.m; sourceTree = "<group>"; };
+		3FF17C8C1C537F1D0072A3C5 /* JobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobsViewController.h; path = ViewController/JobsViewController.h; sourceTree = "<group>"; };
+		3FF17C8D1C537F1D0072A3C5 /* JobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobsViewController.m; path = ViewController/JobsViewController.m; sourceTree = "<group>"; };
+		3FF17C8F1C537F360072A3C5 /* AppliedJobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppliedJobsViewController.h; path = ViewController/AppliedJobsViewController.h; sourceTree = "<group>"; };
+		3FF17C901C537F360072A3C5 /* AppliedJobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppliedJobsViewController.m; path = ViewController/AppliedJobsViewController.m; sourceTree = "<group>"; };
+		3FF17C921C537F510072A3C5 /* SavedJobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SavedJobsViewController.h; path = ViewController/SavedJobsViewController.h; sourceTree = "<group>"; };
+		3FF17C931C537F510072A3C5 /* SavedJobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SavedJobsViewController.m; path = ViewController/SavedJobsViewController.m; sourceTree = "<group>"; };
+		3FF17C951C537F650072A3C5 /* SuggestedJobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuggestedJobsViewController.h; path = ViewController/SuggestedJobsViewController.h; sourceTree = "<group>"; };
+		3FF17C961C537F650072A3C5 /* SuggestedJobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SuggestedJobsViewController.m; path = ViewController/SuggestedJobsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +192,7 @@
 		06061F281C536D980013A322 /* iConnect */ = {
 			isa = PBXGroup;
 			children = (
+				3FF17C851C537D1F0072A3C5 /* ViewController */,
 				06061F2C1C536D980013A322 /* AppDelegate.h */,
 				06061F2D1C536D980013A322 /* AppDelegate.m */,
 				06061F2F1C536D980013A322 /* ViewController.h */,
@@ -244,6 +264,25 @@
 				06061F681C536D990013A322 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FF17C851C537D1F0072A3C5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FF17C861C537D840072A3C5 /* JobSeekerHomeViewController.h */,
+				3FF17C871C537D840072A3C5 /* JobSeekerHomeViewController.m */,
+				3FF17C891C537D970072A3C5 /* RecruiterHomeViewController.h */,
+				3FF17C8A1C537D970072A3C5 /* RecruiterHomeViewController.m */,
+				3FF17C8C1C537F1D0072A3C5 /* JobsViewController.h */,
+				3FF17C8D1C537F1D0072A3C5 /* JobsViewController.m */,
+				3FF17C8F1C537F360072A3C5 /* AppliedJobsViewController.h */,
+				3FF17C901C537F360072A3C5 /* AppliedJobsViewController.m */,
+				3FF17C921C537F510072A3C5 /* SavedJobsViewController.h */,
+				3FF17C931C537F510072A3C5 /* SavedJobsViewController.m */,
+				3FF17C951C537F650072A3C5 /* SuggestedJobsViewController.h */,
+				3FF17C961C537F650072A3C5 /* SuggestedJobsViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF17C841C5378BD0072A3C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,9 +477,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF17C8E1C537F1D0072A3C5 /* JobsViewController.m in Sources */,
+				3FF17C971C537F650072A3C5 /* SuggestedJobsViewController.m in Sources */,
 				06061F311C536D980013A322 /* ViewController.m in Sources */,
 				06061F2E1C536D980013A322 /* AppDelegate.m in Sources */,
+				3FF17C881C537D840072A3C5 /* JobSeekerHomeViewController.m in Sources */,
+				3FF17C941C537F510072A3C5 /* SavedJobsViewController.m in Sources */,
+				3FF17C911C537F360072A3C5 /* AppliedJobsViewController.m in Sources */,
 				06061F2B1C536D980013A322 /* main.m in Sources */,
+				3FF17C8B1C537D970072A3C5 /* RecruiterHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +795,7 @@
 				06061F791C536D990013A322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06061F7B1C536D990013A322 /* Build configuration list for PBXNativeTarget "iConnect WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -757,6 +804,7 @@
 				06061F7D1C536D990013A322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06061F7F1C536D990013A322 /* Build configuration list for PBXNativeTarget "iConnect" */ = {
 			isa = XCConfigurationList;
@@ -765,6 +813,7 @@
 				06061F811C536D990013A322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06061F821C536D990013A322 /* Build configuration list for PBXNativeTarget "iConnectTests" */ = {
 			isa = XCConfigurationList;
@@ -773,6 +822,7 @@
 				06061F841C536D990013A322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06061F851C536D990013A322 /* Build configuration list for PBXNativeTarget "iConnectUITests" */ = {
 			isa = XCConfigurationList;
@@ -781,6 +831,7 @@
 				06061F871C536D990013A322 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
