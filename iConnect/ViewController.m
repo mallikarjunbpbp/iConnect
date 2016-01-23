@@ -16,9 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+   
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+   
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.alertBody = @"Your alert message";
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    // Request to reload table view data
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
