@@ -9,7 +9,7 @@
 #import "DetailInterfaceController.h"
 
 @interface DetailInterfaceController ()
-
+@property(nonatomic, weak)     NSDictionary *dict;
 @end
 
 @implementation DetailInterfaceController
@@ -20,15 +20,17 @@
     // Configure interface objects here.
     // Set the selected quote
 //    self.quote = context;
+    _dict=context;
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
-    [_designationLabel setText:@"Software Engineer"];
-//    [_companyLogo setImage:[UIImage imageNamed:@"google"]];
-    [_nameLabel setText:@"State Farm"];
-    [_tagsLabel setText:@"JAVA iOS Android Python"];
+    
+    [_designationLabel setText:[_dict objectForKey:@"designation"]];
+//    [_companyLogo setImage:[UIImage imageNamed:[_dict objectForKey:@"logo"]]];
+    [_nameLabel setText:[_dict objectForKey:@"companyname"]];
+    [_tagsLabel setText:[_dict objectForKey:@"tags"]];
     
 }
 
@@ -37,6 +39,21 @@
     [super didDeactivate];
 }
 
+- (IBAction)saveButtonPressed {
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        NSLog(@"WCSession is supported from the watch");
+        
+        NSError *error;
+        [session updateApplicationContext:_dict error:&error];
+        
+        
+    }
+    
+}
 @end
 
 

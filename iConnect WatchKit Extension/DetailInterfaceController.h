@@ -8,12 +8,14 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface DetailInterfaceController : WKInterfaceController
+@interface DetailInterfaceController : WKInterfaceController<WCSessionDelegate>
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *designationLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *companyLogo;
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *nameLabel;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *tagsLabel;
+- (IBAction)saveButtonPressed;
 
 @end
