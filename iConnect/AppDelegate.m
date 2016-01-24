@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 #import <Parse/Parse.h>
 @interface AppDelegate ()
 
@@ -19,6 +21,9 @@
     
     [Parse setApplicationId:@"8iZ4ywjvDt6XWhVO9O2gsg3mGbjhhJ4gP0Ki45Sk"
                   clientKey:@"PX8Clf1njJsD5AHMv1FrgRYeYNBMhxrKJZDJVsho"];
+    
+    [Fabric with:@[[Crashlytics class]]];
+
     
     // Override point for customization after application launch.
     
