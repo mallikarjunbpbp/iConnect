@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
     self.array = [NSMutableArray array];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Candidate"];

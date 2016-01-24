@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
     // Do any additional setup after loading the view.
     self.fullName.text = self.object[@"fullname"];
     self.designation.text = self.object[@"designation"];

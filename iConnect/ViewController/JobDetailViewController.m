@@ -21,10 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
     // Do any additional setup after loading the view.
     self.jobTitle.text = self.object[@"designation"];
     self.company.text = self.object[@"companyname"];
-    self.matchPercent.text = @"50 %";
+    self.matchPercent.text = @"56 %";
     self.jobDescription.text = self.object[@"Description"];
     self.relatedTags.text = [self.object[@"tags"] componentsJoinedByString:@","];
     

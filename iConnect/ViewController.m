@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
+    
     UITextField *password = (UITextField *)[self.view viewWithTag:102];
     password.secureTextEntry = YES;
     
@@ -38,8 +40,7 @@
 - (void) session:(nonnull WCSession *)session didReceiveApplicationContext:(nonnull NSDictionary<NSString *,id> *)applicationContext {
     
     NSLog(@"%@", applicationContext);
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iConnect"
-                                                    message:@"Updating Parse database"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iConnect"    message:@"Updating Parse database"
                                                    delegate:self
                                           cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     [alert show];
@@ -108,6 +109,12 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"One or more fields empty." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alert show];
     }
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

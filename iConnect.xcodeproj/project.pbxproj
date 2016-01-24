@@ -498,7 +498,7 @@
 				TargetAttributes = {
 					06061F251C536D980013A322 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2WESM7TKKR;
+						DevelopmentTeam = 8E3H44KA45;
 					};
 					06061F3E1C536D990013A322 = {
 						CreatedOnToolsVersion = 7.2;
@@ -510,11 +510,11 @@
 					};
 					06061F521C536D990013A322 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2WESM7TKKR;
+						DevelopmentTeam = 8E3H44KA45;
 					};
 					06061F611C536D990013A322 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2WESM7TKKR;
+						DevelopmentTeam = 8E3H44KA45;
 					};
 				};
 			};

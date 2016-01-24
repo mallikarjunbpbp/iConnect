@@ -35,7 +35,7 @@
     [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:1]];
     [notification setTimeZone:[NSTimeZone  defaultTimeZone]];
     //Male a call to parse to get the best suggested job
-    [notification setAlertBody:@"iOS Developer"];
+    [notification setAlertBody:@"iOS Developer Opening!"];
     [application setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
     
     return YES;
