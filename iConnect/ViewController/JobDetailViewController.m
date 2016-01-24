@@ -25,8 +25,8 @@
     self.jobTitle.text = self.object[@"designation"];
     self.company.text = self.object[@"companyname"];
     self.matchPercent.text = @"50 %";
-    //self.jobDescription.text = self.object[@"designation"];
-    //self.relatedTags.text = self.object[@"designation"];
+    self.jobDescription.text = self.object[@"Description"];
+    self.relatedTags.text = [self.object[@"tags"] componentsJoinedByString:@","];
     
 }
 
