@@ -1,21 +1,20 @@
 //
-//  AppliedJobsViewController.m
+//  RecruiterDetailViewController.m
 //  iConnect
 //
 //  Created by student on 1/23/16.
 //  Copyright © 2016 Mallikarjun. All rights reserved.
 //
 
-#import "AppliedJobsViewController.h"
-#import <Parse/Parse.h>
-#import "JobDetailViewController.h"
-#import "UserSingleton.h"
+#import "RecruiterDetailViewController.h"
+#import "UserDetailViewController.h"
 
-@interface AppliedJobsViewController ()
+@interface RecruiterDetailViewController ()
 @property(nonatomic,strong) NSMutableArray *array;
+@property (weak, nonatomic) IBOutlet UITableView *recruiterDetailTableView;
 @end
 
-@implementation AppliedJobsViewController
+@implementation RecruiterDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,8 +23,7 @@
     self.array = [NSMutableArray array];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Candidate"];
-    [query whereKey:@"userId" equalTo:[[UserSingleton instance] userId]];
-    [query whereKey:@"isapplied" equalTo:[NSNumber numberWithBool:YES]];
+    [query whereKey:@"jobid" equalTo:self.jobId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(!error)
         {
@@ -39,30 +37,7 @@
             //            });
             
             
-            [self.appliedJobsTableView reloadData];
-        }
-        
-        else
-        {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-        
-    }];
-    
-}
-
--(void)updateJobs:(NSArray *)query
-{
-    PFQuery *query1 = [PFQuery queryWithClassName:@"Jobs"];
-    [query1 whereKey:@"jobid" containedIn:query];
-    [query1 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if(!error)
-        {
-            for (PFObject *object in objects) {
-                [self.array addObject:object];
-            }
-            
-            [self.appliedJobsTableView reloadData];
+            [self.recruiterDetailTableView reloadData];
         }
         
         else
@@ -102,10 +77,10 @@
 {
     PFObject *object = [self.array objectAtIndex:indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AppliedJobsCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecruiterDetailCell"];
     
-    cell.textLabel.text = object[@"designation"];
-    cell.detailTextLabel.text = object[@"companyname"];
+    cell.textLabel.text = object[@"fullname"];
+    cell.detailTextLabel.text = object[@"designation"];
     
     return cell;
 }
@@ -114,9 +89,10 @@
 {
     UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     PFObject *object = [self.array objectAtIndex:indexPath.row];
-    JobDetailViewController *jobDetailViewController = (JobDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"JobDetail"];
-    jobDetailViewController.object = object;
-    [self.navigationController pushViewController:jobDetailViewController animated:NO];
+    UserDetailViewController *userDetailViewController = (UserDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"UserDetail"];
+    userDetailViewController.object = object;
+    [self.navigationController pushViewController:userDetailViewController animated:NO];
 }
+
 
 @end
