@@ -27,13 +27,15 @@
     self.matchingPercent.text = @"50 %";
     self.contactInfo.text = [NSString stringWithFormat:@"%@\n%@",self.object[@"email"],self.object[@"phone"]];
     
-    NSString *tags = @"";
     
-    for (NSString *string in self.object[@"tags"]) {
-        [tags stringByAppendingString:(NSString *)string];
-    }
+//    NSMutableString *tags = [[NSMutableString alloc] init];
+//    
+//    for (NSString *string in self.object[@"tags"]) {
+//        //[tags stringByAppendingString:string];
+//        NSLog(@"%@",string);
+//    }
     
-    self.relatedTags.text = tags;
+    self.relatedTags.text = [self.object[@"tags"] componentsJoinedByString:@","];
     
 }
 
