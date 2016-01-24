@@ -24,14 +24,34 @@
     
     UITextField *password = (UITextField *)[self.view viewWithTag:102];
     password.secureTextEntry = YES;
+    
+
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        NSLog(@"WCSession is supported from the iPhone");
+    }
+
+}
+
+- (void) session:(nonnull WCSession *)session didReceiveApplicationContext:(nonnull NSDictionary<NSString *,id> *)applicationContext {
+    
+    NSLog(@"%@", applicationContext);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iConnect"
+                                                    message:@"Updating Parse database"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    [alert show];
+    
+    //make a parse call to update to saved
+    NSString *item1 = [applicationContext objectForKey:@"save"];
+    NSLog(@"Response from the app is %@", item1);
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
-    
-    //    // Request to reload table view data
-    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
-    //
+
     
 }
 - (void)didReceiveMemoryWarning {

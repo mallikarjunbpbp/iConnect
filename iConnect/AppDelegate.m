@@ -21,17 +21,23 @@
                   clientKey:@"PX8Clf1njJsD5AHMv1FrgRYeYNBMhxrKJZDJVsho"];
     
     // Override point for customization after application launch.
+    
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+        
+        [application registerUserNotificationSettings:[UIUserNotificationSettings
+                                                       settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|
+                                                       UIUserNotificationTypeSound categories:nil]];
     }
     
-    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:5];
-    localNotification.repeatInterval=kCFCalendarUnitSecond;
-    localNotification.timeZone=[NSTimeZone defaultTimeZone];
-    localNotification.alertBody = @"Your alert message";
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-
+    
+    UILocalNotification *notification = [[UILocalNotification alloc]init];
+    notification.repeatInterval = kCFCalendarUnitMinute;
+    [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+    [notification setTimeZone:[NSTimeZone  defaultTimeZone]];
+    //Male a call to parse to get the best suggested job
+    [notification setAlertBody:@"iOS Developer"];
+    [application setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
+    
     return YES;
 }
 
@@ -44,10 +50,48 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
     
+    //    NSMutableSet *categories= [[NSMutableSet alloc] init];
+    //
+    //    UIMutableUserNotificationAction *saveJobNotification = [[UIMutableUserNotificationAction alloc] init];
+    //
+    //    saveJobNotification.identifier = @"Save";
+    //    saveJobNotification.title =NSLocalizedString(@"Save", @"Save Job");
+    //    saveJobNotification.authenticationRequired = false;
+    //    [saveJobNotification setActivationMode:UIUserNotificationActivationModeBackground];
+    //    saveJobNotification.identifier=@"SaveJob";
+    //
+    //
+    //    UIMutableUserNotificationCategory* notificationCategory = [[UIMutableUserNotificationCategory alloc] init];
+    //    notificationCategory.identifier = @"SaveJob";
+    //    [notificationCategory setActions:[NSArray arrayWithObject:saveJobNotification] forContext:UIUserNotificationActionContextDefault];
+    //
+    //    [categories addObject:notificationCategory];
+    //
+    //    // Configure other actions and categories and add them to the set...
+    //
+    //    UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:
+    //                                            (UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound)
+    //                                                                             categories:categories];
+    //
+    //    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    //    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    //
+    //    notification.timeZone = [NSTimeZone defaultTimeZone];
+    //    notification.alertTitle=@"HELLO";
+    //    notification.category = @"SaveJob";
+    //    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
+    
+    
 }
+
+//    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+//        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:[NSSet setWithObject:notificationCategory]]];
+//    }
+
+
+
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
