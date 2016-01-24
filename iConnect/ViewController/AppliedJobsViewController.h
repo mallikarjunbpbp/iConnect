@@ -10,4 +10,5 @@
 
 @interface AppliedJobsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UITableView *appliedJobsTableView;
 @end

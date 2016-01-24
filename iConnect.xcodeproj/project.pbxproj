@@ -46,7 +46,14 @@
 		066FB5F21C53C35900A44E5E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 066FB5F11C53C35900A44E5E /* libsqlite3.0.tbd */; };
 		066FB5F41C53C39200A44E5E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066FB5F31C53C39200A44E5E /* AudioToolbox.framework */; };
 		066FB5F61C53C3B100A44E5E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066FB5F51C53C3B100A44E5E /* SystemConfiguration.framework */; };
+
 		06EFD6791C541DBB00CB80E5 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EFD6781C541DBB00CB80E5 /* WatchConnectivity.framework */; };
+
+		3F5C19151C5429F7007883EE /* JobDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C19141C5429F7007883EE /* JobDetailViewController.m */; };
+		3F5C19191C544240007883EE /* UserSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C19181C544240007883EE /* UserSingleton.m */; };
+		3F5C191C1C54A467007883EE /* RecruiterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C191B1C54A467007883EE /* RecruiterDetailViewController.m */; };
+		3F5C191F1C54A76D007883EE /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C191E1C54A76D007883EE /* UserDetailViewController.m */; };
+
 		3FF17C841C5378BD0072A3C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06061F321C536D980013A322 /* Main.storyboard */; };
 		3FF17C881C537D840072A3C5 /* JobSeekerHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF17C871C537D840072A3C5 /* JobSeekerHomeViewController.m */; };
 		3FF17C8B1C537D970072A3C5 /* RecruiterHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF17C8A1C537D970072A3C5 /* RecruiterHomeViewController.m */; };
@@ -157,6 +164,14 @@
 		066FB5F31C53C39200A44E5E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		066FB5F51C53C3B100A44E5E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		06EFD6781C541DBB00CB80E5 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		3F5C19131C5429F7007883EE /* JobDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobDetailViewController.h; path = ViewController/JobDetailViewController.h; sourceTree = "<group>"; };
+		3F5C19141C5429F7007883EE /* JobDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobDetailViewController.m; path = ViewController/JobDetailViewController.m; sourceTree = "<group>"; };
+		3F5C19171C544240007883EE /* UserSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSingleton.h; path = Singleton/UserSingleton.h; sourceTree = "<group>"; };
+		3F5C19181C544240007883EE /* UserSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSingleton.m; path = Singleton/UserSingleton.m; sourceTree = "<group>"; };
+		3F5C191A1C54A467007883EE /* RecruiterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecruiterDetailViewController.h; path = ViewController/RecruiterDetailViewController.h; sourceTree = "<group>"; };
+		3F5C191B1C54A467007883EE /* RecruiterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecruiterDetailViewController.m; path = ViewController/RecruiterDetailViewController.m; sourceTree = "<group>"; };
+		3F5C191D1C54A76D007883EE /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailViewController.h; path = ViewController/UserDetailViewController.h; sourceTree = "<group>"; };
+		3F5C191E1C54A76D007883EE /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailViewController.m; path = ViewController/UserDetailViewController.m; sourceTree = "<group>"; };
 		3FF17C861C537D840072A3C5 /* JobSeekerHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobSeekerHomeViewController.h; path = ViewController/JobSeekerHomeViewController.h; sourceTree = "<group>"; };
 		3FF17C871C537D840072A3C5 /* JobSeekerHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobSeekerHomeViewController.m; path = ViewController/JobSeekerHomeViewController.m; sourceTree = "<group>"; };
 		3FF17C891C537D970072A3C5 /* RecruiterHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecruiterHomeViewController.h; path = ViewController/RecruiterHomeViewController.h; sourceTree = "<group>"; };
@@ -254,6 +269,7 @@
 		06061F281C536D980013A322 /* iConnect */ = {
 			isa = PBXGroup;
 			children = (
+				3F5C19161C543C10007883EE /* Singleton */,
 				3FF17C851C537D1F0072A3C5 /* ViewController */,
 				06061F2C1C536D980013A322 /* AppDelegate.h */,
 				06061F2D1C536D980013A322 /* AppDelegate.m */,
@@ -348,6 +364,15 @@
 			name = Parse;
 			sourceTree = "<group>";
 		};
+		3F5C19161C543C10007883EE /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				3F5C19171C544240007883EE /* UserSingleton.h */,
+				3F5C19181C544240007883EE /* UserSingleton.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
 		3FF17C851C537D1F0072A3C5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +388,12 @@
 				3FF17C931C537F510072A3C5 /* SavedJobsViewController.m */,
 				3FF17C951C537F650072A3C5 /* SuggestedJobsViewController.h */,
 				3FF17C961C537F650072A3C5 /* SuggestedJobsViewController.m */,
+				3F5C19131C5429F7007883EE /* JobDetailViewController.h */,
+				3F5C19141C5429F7007883EE /* JobDetailViewController.m */,
+				3F5C191A1C54A467007883EE /* RecruiterDetailViewController.h */,
+				3F5C191B1C54A467007883EE /* RecruiterDetailViewController.m */,
+				3F5C191D1C54A76D007883EE /* UserDetailViewController.h */,
+				3F5C191E1C54A76D007883EE /* UserDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -470,7 +501,7 @@
 				TargetAttributes = {
 					06061F251C536D980013A322 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8E3H44KA45;
+						DevelopmentTeam = 2WESM7TKKR;
 					};
 					06061F3E1C536D990013A322 = {
 						CreatedOnToolsVersion = 7.2;
@@ -482,11 +513,11 @@
 					};
 					06061F521C536D990013A322 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8E3H44KA45;
+						DevelopmentTeam = 2WESM7TKKR;
 					};
 					06061F611C536D990013A322 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8E3H44KA45;
+						DevelopmentTeam = 2WESM7TKKR;
 					};
 				};
 			};
@@ -563,7 +594,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF17C8E1C537F1D0072A3C5 /* JobsViewController.m in Sources */,
+				3F5C191C1C54A467007883EE /* RecruiterDetailViewController.m in Sources */,
+				3F5C19151C5429F7007883EE /* JobDetailViewController.m in Sources */,
 				3FF17C971C537F650072A3C5 /* SuggestedJobsViewController.m in Sources */,
+				3F5C19191C544240007883EE /* UserSingleton.m in Sources */,
+				3F5C191F1C54A76D007883EE /* UserDetailViewController.m in Sources */,
 				06061F311C536D980013A322 /* ViewController.m in Sources */,
 				06061F2E1C536D980013A322 /* AppDelegate.m in Sources */,
 				3FF17C881C537D840072A3C5 /* JobSeekerHomeViewController.m in Sources */,
@@ -748,7 +783,7 @@
 				);
 				INFOPLIST_FILE = "iConnect WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mallikarjun.iConnect.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mallikarjun.iConnect1.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -772,7 +807,7 @@
 				);
 				INFOPLIST_FILE = "iConnect WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mallikarjun.iConnect.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mallikarjun.iConnect1.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -790,7 +825,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				IBSC_MODULE = iConnect_WatchKit_Extension;
 				INFOPLIST_FILE = "iConnect WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mallikarjun.iConnect.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mallikarjun.iConnect1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -808,7 +843,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				IBSC_MODULE = iConnect_WatchKit_Extension;
 				INFOPLIST_FILE = "iConnect WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mallikarjun.iConnect.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mallikarjun.iConnect1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ViewController : UIViewController<WCSessionDelegate>
+@interface ViewController : UIViewController<UITextFieldDelegate, WCSessionDelegate>
+
 
 
 @end

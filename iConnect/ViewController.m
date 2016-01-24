@@ -10,6 +10,8 @@
 #import "JobSeekerHomeViewController.h"
 #import "RecruiterHomeViewController.h"
 #import <Parse/Parse.h>
+#import "UserSingleton.h"
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
@@ -20,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UITextField *password = (UITextField *)[self.view viewWithTag:102];
+    password.secureTextEntry = YES;
+    
+
     if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];
         session.delegate = self;
@@ -41,11 +47,11 @@
     //make a parse call to update to saved
     NSString *item1 = [applicationContext objectForKey:@"save"];
     NSLog(@"Response from the app is %@", item1);
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
 
-    
     
 }
 - (void)didReceiveMemoryWarning {
@@ -55,26 +61,53 @@
 
 - (IBAction)loginBtnPressed:(id)sender {
     
-    //    NSString *randomNumber = [NSString stringWithFormat:@"%d",arc4random()%2];
-    //
-    //    if ([randomNumber isEqualToString:@"0"])
-    //    {
-    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UITextField *username = (UITextField *)[self.view viewWithTag:101];
+    NSString *theUser = username.text;
+    UITextField *password = (UITextField *)[self.view viewWithTag:102];
+    NSString *thePass = password.text;
+    UserSingleton *singleton = [UserSingleton instance];
     
-    JobSeekerHomeViewController *jobSeekerHomeViewController = (JobSeekerHomeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"JobSeekerHome"];
-    [self.navigationController pushViewController:jobSeekerHomeViewController animated:NO];
     
-    //    }
-    //    else
-    //    {
-    //
-    //        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    //
-    //        RecruiterHomeViewController *recruiterHomeViewController = (RecruiterHomeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RecruiterHome"];
-    //
-    //        [self.navigationController pushViewController:recruiterHomeViewController animated:NO];
-    //        
-    //    }
+    if ((theUser!=nil && ![theUser isEqualToString:@""]) && (thePass!=nil && ![thePass isEqualToString:@""])) {
+        [PFUser logInWithUsernameInBackground:theUser password:thePass
+                                        block:^(PFUser *user, NSError *error) {
+                                            if (user) {
+                                                // Do stuff after successful login.
+                                                if([user[@"role"] isEqualToString:@"R"])
+                                                {
+                                                    
+                                                    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                                                    
+                                                    RecruiterHomeViewController *recruiterHomeViewController = (RecruiterHomeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RecruiterHome"];
+                                                    
+                                                    
+                                                    [self.navigationController pushViewController:recruiterHomeViewController animated:NO];
+                                                }
+                                                
+                                                else if ([user[@"role"] isEqualToString:@"C"])
+                                                {
+                                                    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                                                    JobSeekerHomeViewController *jobSeekerHomeViewController = (JobSeekerHomeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"JobSeekerHome"];
+                                                    [self.navigationController pushViewController:jobSeekerHomeViewController animated:NO];
+                                                }
+                                                
+                                                [singleton setUsername:user[@"username"]];
+                                                [singleton setFullName:user[@"Fullname"]];
+                                                [singleton setUserType:user[@"role"]];
+                                                [singleton setUserId:user[@"userId"]];
+                                                
+                                            } else {
+                                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                                                [alert show];
+                                            }
+                                        }];
+    }
+    
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"One or more fields empty." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+    }
 }
 
 @end
