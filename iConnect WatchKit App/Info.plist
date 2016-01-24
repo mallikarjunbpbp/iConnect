@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.mallikarjun.iConnect1</string>
+	<string>com.mallikarjun.iConnect</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
